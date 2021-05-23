@@ -5,7 +5,7 @@
   min-height: 1375px
   .content-container
     .sorting
-      width: 50%
+      width: 100%
       font-weight: bold
       margin-bottom: 38px
       position: relative
@@ -45,7 +45,7 @@
               background-color: $red
               border-radius: 10px
               color: #fff
-              font-size: .8rem 
+              font-size: .8rem
             .disabled
               visibility: hidden
             &__favorite
@@ -92,7 +92,6 @@
         .bought
           background-color: $dark
 
-
   .show-more
     border: 1px solid #E5E5E5
     width: 30em
@@ -101,3 +100,41 @@
     font-family: 'Montserrat', sans-serif
     font-size: 0.7rem
     cursor: pointer
+
+@media (max-width: 1279px)
+  .main
+    min-height: 600px
+    overflow: hidden
+    .content-container
+
+      .cats-cards
+        .card
+          height: 17em
+          &__img
+            height: 8em
+            .add
+              padding: 15px 13px 0 14px
+              &__sale
+                height: 2em
+                width: 3em
+                border-radius: 5px
+              &__favorite
+                width: 2em
+                height: 2em
+          &__info
+            height: 6em
+            padding: 15px 10px
+          &__info-title
+            font-size: 0.9rem
+          &__info-descr
+            align-items: center
+            font-size: 0.4rem
+          &__info-price
+            font-size: 0.8rem
+          .buy-btn
+            height: 2.5em
+            border-radius: 0px
+    .show-more
+      width: 16em
+      height: 4em
+      margin-bottom: 1em

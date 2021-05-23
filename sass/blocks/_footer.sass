@@ -1,7 +1,6 @@
 .footer
   background: $dark
   min-height: 312px
-
   &__text
     display: flex
     flex-direction: column
@@ -79,3 +78,18 @@
   .content-container
     padding: 83px 80px
     display: flex
+
+@media (max-width: 1279px)
+  .footer
+    min-height: 250px
+    .content-container
+      padding: 4em 0
+      display: flex
+    &__title
+      font-size: 1.5rem
+    .email-input
+      width: 189px
+      height: 55px
+      margin-right: 5px
+    .subscribe
+      padding: 1.3em 2.5em 1.3em
