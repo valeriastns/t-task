@@ -27,6 +27,32 @@
         &__img
           background: url(../assets/images/cat-1.jpg) center center/cover no-repeat
           height: 264px
+          position: relative
+          .add
+            position: absolute
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            top: 0
+            padding: 34px 32px 0 38px
+            &__sale
+              height: 39px
+              width: 78px
+              display: flex
+              justify-content: center
+              align-items: center
+              background-color: $red
+              border-radius: 10px
+              color: #fff
+              font-size: .8rem 
+            .disabled
+              visibility: hidden
+            &__favorite
+              background: url('../assets/icons/heart.svg') center center/contain no-repeat
+              display: block
+              width: 46px
+              height: 46px
         &__info
           height: 190px
           background-color: $grey
@@ -52,10 +78,6 @@
             width: 4px
             height: 26px
             background-color: $blue
-          .age
-
-          .additional
-
         &__info-price
           font-size: 1.3rem
           font-weight: bold
@@ -67,6 +89,10 @@
           font-size: 16px
           border-bottom-left-radius: 10px
           border-bottom-right-radius: 10px
+        .bought
+          background-color: $dark
+
+
   .show-more
     border: 1px solid #E5E5E5
     width: 30em
