@@ -31,7 +31,108 @@
       <p class="header__search-result">Найдено 349 котов</p>
     </div>
   </header>
-  <main></main>
+
+  <main class="main">
+    <div class="content-container">
+      <div class="sorting"> Сортировать по:
+        <select class="disabled selection" id="select_price">
+          <option сlass="price" value="0">Цене</option>
+          <option value="1">Низкая</option>
+          <option value="2">Высокая</option>
+        </select>
+        <select class="disabled selection" id="select_age">
+          <option class="age" value="0">Возрасту</option>
+          <option value="1">0-3</option>
+          <option value="2">3-5</option>
+          <option value="3">5+</option>
+        </select>
+      
+      </div>
+      <section class="cats-cards">
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__info">
+            <div class="card__info-title">Кот полосатый</div>
+            <div class="card__info-descr">
+              <div class="color">Коричневый окрас</div>
+              <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+              <div class="additional"><span class="bold">4</span> кол-во лап</div>
+            </div>
+            <div class="card__info-price">30 000 руб.</div>
+          </div>
+          <button class="buy-btn btn">Купить</button>
+        </div>
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__info">
+            <div class="card__info-title">Кот полосатый</div>
+            <div class="card__info-descr">
+              <div class="color">Коричневый окрас</div>
+              <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+              <div class="additional"><span class="bold">4</span> кол-во лап</div>
+            </div>
+            <div class="card__info-price">30 000 руб.</div>
+          </div>
+          <button class="buy-btn btn">Купить</button>
+        </div>
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__info">
+            <div class="card__info-title">Кот полосатый</div>
+            <div class="card__info-descr">
+              <div class="color">Коричневый окрас</div>
+              <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+              <div class="additional"><span class="bold">4</span> кол-во лап</div>
+            </div>
+            <div class="card__info-price">30 000 руб.</div>
+          </div>
+          <button class="buy-btn btn">Купить</button>
+        </div>
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__info">
+            <div class="card__info-title">Кот полосатый</div>
+            <div class="card__info-descr">
+              <div class="color">Коричневый окрас</div>
+              <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+              <div class="additional"><span class="bold">4</span> кол-во лап</div>
+            </div>
+            <div class="card__info-price">30 000 руб.</div>
+          </div>
+          <button class="buy-btn btn">Купить</button>
+        </div>
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__info">
+            <div class="card__info-title">Кот полосатый</div>
+            <div class="card__info-descr">
+              <div class="color">Коричневый окрас</div>
+              <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+              <div class="additional"><span class="bold">4</span> кол-во лап</div>
+            </div>
+            <div class="card__info-price">30 000 руб.</div>
+          </div>
+          <button class="buy-btn btn">Купить</button>
+        </div>
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__info">
+            <div class="card__info-title">Кот полосатый</div>
+            <div class="card__info-descr">
+              <div class="color">Коричневый окрас</div>
+              <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+              <div class="additional"><span class="bold">4</span> кол-во лап</div>
+            </div>
+            <div class="card__info-price">30 000 руб.</div>
+          </div>
+          <button class="buy-btn btn">Купить</button>
+        </div>
+      </section>
+    </div>
+    <button class="show-more">Показать еще 20</button>
+    <button class="scroll-top btn"></button>
+  </main>
+
   <footer class="footer">
     <div class="content-container">
       <div class="footer__text">
@@ -42,7 +143,7 @@
         <input class="email-input" placeholder="Email" type="text" id="email" name="email">
         <button class="subscribe btn">Подписаться</button>
         <div class="checkbox-container">
-          <input type="checkbox" id="custom"checked="checked">
+          <input type="checkbox" id="custom" checked="checked">
           <label for="custom" class="checkmark"></label>
           Подписаться на новости
         </div>

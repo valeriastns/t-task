@@ -1,6 +1,9 @@
 @import './blocks/_header'
 @import './base/_variables'
 @import './blocks/_footer'
+@import './blocks/_main'
+@import './blocks/_scrolltop-btn'
+@import './base/_mixins'
 
 *
   padding: 0
@@ -14,14 +17,52 @@ ul
 
 li
   list-style: none
+  cursor: pointer
 a
   text-decoration: none
+  cursor: pointer
 
 .content-container
   max-width: 1280px
   margin: 0 auto
 
 .btn
+  font-family: 'Montserrat', sans-serif
   border: none
   outline: none
   cursor: pointer
+  color: white
+
+.bold
+  font-weight: bold
+
+.color,
+.age,
+.additional
+  width: 33%
+  display: flex
+  flex-direction: column
+
+.sorting
+  &__price,
+  &__age
+    position: relative
+    width: 12%
+    font-family: 'Montserrat', sans-serif
+    font-size: 1rem
+    background: white
+    outline: none
+    border: none
+    &::after
+      content: ''
+      background: url('../assets/icons/arrow-down.svg')
+      position: absolute
+      cursor: pointer
+      width: 15px
+      height: 15px
+      right: 3%
+      top: 12%
+
+
+  
+      
