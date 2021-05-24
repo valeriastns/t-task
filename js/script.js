@@ -43,6 +43,84 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.addEventListener('scroll', scrollBtnHandler);
 
 
+  let cardHtmlTemplate = (catCard) => `
+  <div class="card">
+  <div class="card__img" style="background-image: url(${catCard.url})">
+    <div class="add">
+      ${!catCard.onsale ?`<div class="add__sale" style="visibility: hidden"></div>`:`<div class="add__sale">${catCard.onsale}%</div>`}
+      <button class="btn add__favorite saved"></button>
+    </div>
+  </div>
+  <div class="card__info">
+    <div class="card__info-title">${catCard.title}</div>
+    <div class="card__info-descr">
+      <div class="color">Коричневый окрас</div>
+      <div class="age"><span class="bold">2 мес.</span> Возраст </div>
+      <div class="additional"><span class="bold">4</span> кол-во лап</div>
+    </div>
+    <div class="card__info-price">${catCard.price} руб.</div>
+  </div>
+  ${!catCard.status ? `<button class="buy-btn btn ">Купить</button>` : `<button class="sold buy-btn btn ">Продан</button>`}
+</div>  
+  `
 
+  let catsCards = [
+    {
+      url: "assets/images/cat-1.jpg",
+      title: "Кот полосатый",
+      price: "20 000",
+      status: "sold",
+      onsale: 30
+    },
+    {
+      url: "assets/images/cat-2.jpg",
+      title: "Кот полосатый",
+      price: "33 000",
+    },
+    {
+      url: "assets/images/cat-3.jpg",
+      title: "Кот полосатый",
+      price: "42 000",
+    },
+    {
+      url: "assets/images/cat-2.jpg",
+      title: "Кот полосатый",
+      price: "40 000",
+    },
+    {
+      url: "assets/images/cat-3.jpg",
+      title: "Кот полосатый",
+      price: "35 000",
+      status: "sold",
+      onsale: 40
+    },
+    {
+      url: "assets/images/cat-1.jpg",
+      title: "Кот полосатый",
+      price: "30 000",
+      status: "sold",
+    },
+     {
+      url: "assets/images/cat-3.jpg",
+      title: "Кот полосатый",
+      price: "25 000",
+    },
+     {
+      url: "assets/images/cat-1.jpg",
+      title: "Кот полосатый",
+      price: "10 000",
+      onsale: 40
+    },
+    {
+      url: "assets/images/cat-2.jpg",
+      title: "Кот полосатый",
+      price: "15 000",
+      status: "sold",
+      onsale: 40
+    },
+  ]
+
+  let catsCardsHolder = document.querySelector('.cats-cards')
+  catsCardsHolder.insertAdjacentHTML('afterbegin', catsCards.map(catCard => cardHtmlTemplate(catCard)).join(''));
 
 });

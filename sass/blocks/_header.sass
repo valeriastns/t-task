@@ -61,9 +61,17 @@
     flex-wrap: wrap
     align-items: center
 
-@media (max-width: 639px)
+@media(max-width: 1279px)
   .header
     min-height: 150px
+    &__contacts
+      display: none
+    &__search-result
+      font-size: 1.3rem
+
+@media (max-width: 639px)
+  .header
+    min-height: 120px
     margin-bottom: 20px
     &__logo
       margin-bottom: 0
@@ -71,15 +79,16 @@
     &__nav
       position: absolute
       right: 0
-      top: 40%
+      top: 43%
       width: 100%
       z-index: 1
     &__nav-menu
       display: none
-      min-height: 300px
-      background: #1F2021
+      min-height: 200px
+      background: rgba(#212121, 0.6)
       flex-direction: column
       align-items: center
+      transition: 3s ease-out
     &__nav-menu-link
       line-height: 2rem
     .burger-menu
