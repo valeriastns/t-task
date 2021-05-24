@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   <div class="card">
   <div class="card__img" style="background-image: url(${catCard.url})">
     <div class="add">
-      ${!catCard.onsale ?`<div class="add__sale" style="visibility: hidden"></div>`:`<div class="add__sale">${catCard.onsale}%</div>`}
-      <button class="btn add__favorite saved"></button>
+      ${!catCard.onsale ? `<div class="add__sale" style="visibility: hidden"></div>` : `<div class="add__sale">${catCard.onsale}%</div>`}
+      <button class="add__favorite btn"></button>
     </div>
   </div>
   <div class="card__info">
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 </div>  
   `
 
-  let catsCards = [
+  let initCatsCards = [
     {
       url: "assets/images/cat-1.jpg",
       title: "Кот полосатый",
@@ -100,12 +100,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       price: "30 000",
       status: "sold",
     },
-     {
+    {
       url: "assets/images/cat-3.jpg",
       title: "Кот полосатый",
       price: "25 000",
     },
-     {
+    {
       url: "assets/images/cat-1.jpg",
       title: "Кот полосатый",
       price: "10 000",
@@ -120,7 +120,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
     },
   ]
 
-  let catsCardsHolder = document.querySelector('.cats-cards')
-  catsCardsHolder.insertAdjacentHTML('afterbegin', catsCards.map(catCard => cardHtmlTemplate(catCard)).join(''));
+  function renderCatsCards(catsCards) {
+    let catsCardsHolder = document.querySelector('.cats-cards')
+    catsCardsHolder.innerHTML = '';
+    catsCardsHolder.insertAdjacentHTML('afterbegin', catsCards.map(catCard => cardHtmlTemplate(catCard)).join(''));
+  }
+
+  renderCatsCards(initCatsCards);
+
+  document.querySelector('#select_price').addEventListener('change', function(event) {
+    let newOrder = event.target.value;
+    initCatsCards.sort((a, b) => (+a.price.replace(' ','') > +b.price.replace(' ','')) ? newOrder : -newOrder);
+    renderCatsCards(initCatsCards);
+  })
+
+  ///add to favorite
+  const LIKE_BTNS = document.querySelectorAll('.card .add__favorite');
+
+  function addToFavorite() {
+    LIKE_BTNS.forEach(elem => {
+      elem.addEventListener('click', (event) => {
+        if (event.target.classList.contains('saved')) {
+          event.target.classList.remove('saved');
+        } else {
+          event.target.classList.add('saved')
+          alert(`Кот сохранен в ваши фавориты!`);
+        }
+      });
+    });
+  };
+  addToFavorite();
 
 });
