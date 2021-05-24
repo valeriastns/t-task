@@ -1,7 +1,7 @@
 .scroll-top
-  display: block
-  background: url('../assets/icons/arrow-up.svg') center no-repeat
+  opacity: 0
   position: fixed
+  background: url('../assets/icons/arrow-up.svg') center no-repeat
   height: 59px
   width: 59px
   bottom: 20px
@@ -10,6 +10,13 @@
   background-color: $blue
   padding: 20px
   border-radius: 4px
+  transition: 0.3s ease-in-out
+  transform: translateY(100px)
+
+.scroll-top.show-btn
+  opacity: 1
+  transform: translateY(0)
+  transition: 0.3s ease-in-out
 
 @media(max-width: 1279px)
   .scroll-top
